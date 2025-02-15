@@ -1,4 +1,4 @@
-namespace Bootstrap.Web.Api;
+namespace Bootstrap.Interactors.WeatherForecasts.Queries;
 
 public class WeatherForecast
 {

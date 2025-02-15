@@ -1,3 +1,5 @@
+using Bootstrap.Web.Api.Infrastructure.IOC;
+
 namespace Bootstrap.Web.Api;
 
 public class Program
@@ -15,6 +17,8 @@ public class Program
         // swagger ui
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        NativeDependencyInjectionBootstrap.RegisterServices(builder.Services, builder.Configuration);
 
         var app = builder.Build();
 

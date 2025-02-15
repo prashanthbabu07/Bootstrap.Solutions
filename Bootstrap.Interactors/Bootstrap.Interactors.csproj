@@ -11,9 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="WeatherForecasts/" />
     <Folder Include="WeatherForecasts/Commands/" />
-    <Folder Include="WeatherForecasts/Queries/" />
   </ItemGroup>
 
   <PropertyGroup>

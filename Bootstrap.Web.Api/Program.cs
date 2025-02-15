@@ -1,3 +1,5 @@
+using Autofac.Extensions.DependencyInjection;
+using Bootstrap.Web.Api.Filters;
 using Bootstrap.Web.Api.Infrastructure.IOC;
 
 namespace Bootstrap.Web.Api;
@@ -18,7 +20,12 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        NativeDependencyInjectionBootstrap.RegisterServices(builder.Services, builder.Configuration);
+        NativeDependencyInjectionBootstrap.RegisterServices(builder, builder.Configuration);
+
+        builder.Services.AddControllers(options =>
+        {
+            options.Filters.Add(typeof(GlobalExceptionFilter));
+        });
 
         var app = builder.Build();
 

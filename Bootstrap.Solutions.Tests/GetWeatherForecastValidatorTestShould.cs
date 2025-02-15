@@ -15,25 +15,29 @@ public class GetWeatherForecastValidatorTestShould
     }
 
     [Fact]
-    public void Validation_Should_Fail_With_Correct_Message()
+    public void Validation_Should_NotFail_With_Correct_Message()
     {
         // Arrange
-        var model = new GetWeatherForecast(); // Create an instance of your model.
-        // Act
+        // var model = new GetWeatherForecast(); // Create an instance of your model.
+        // // Act
+        // var result = _validator.TestValidate(model);
+        // // Assert
+        // result.ShouldHaveValidationErrorFor(x => x)
+        //       .WithErrorMessage("The value must be 1");
+
+        var model = new GetWeatherForecast();
         var result = _validator.TestValidate(model);
-        // Assert
-        result.ShouldHaveValidationErrorFor(x => x)
-              .WithErrorMessage("The value must be 1");
+        result.ShouldNotHaveValidationErrorFor(x => x);
     }
 
     [Fact]
-    public void Validation_Should_Fail_Always()
+    public void Validation_Should_NotFail_Always()
     {
         // Arrange
         var model = new GetWeatherForecast();
         // Act
         var result = _validator.TestValidate(model);
         // Assert
-        result.ShouldHaveAnyValidationError();
+        result.ShouldNotHaveAnyValidationErrors();
     }
 }

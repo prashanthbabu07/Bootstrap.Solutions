@@ -8,7 +8,7 @@ using MediatR;
 
 namespace Bootstrap.Web.Api.Infrastructure.IOC;
 
-public class NativeDependencyInjectionBootstrap
+public class DependencyInjectionBootstrap
 {
 	public static void RegisterServices(WebApplicationBuilder builder, IConfiguration configuration)
 	{
@@ -25,9 +25,9 @@ public class NativeDependencyInjectionBootstrap
 		{
 			// Register your services, modules, etc. with containerBuilder
 			cb.RegisterAssemblyTypes(typeof(GetWeatherForecast).GetTypeInfo().Assembly)
-                .AsClosedTypesOf(typeof(AbstractValidator<>))
-                .AsImplementedInterfaces()
-                .InstancePerDependency();
+				.AsClosedTypesOf(typeof(AbstractValidator<>))
+				.AsImplementedInterfaces()
+				.InstancePerDependency();
 		}));
 	}
 }

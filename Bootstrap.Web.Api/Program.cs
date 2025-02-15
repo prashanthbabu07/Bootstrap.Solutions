@@ -20,7 +20,7 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        NativeDependencyInjectionBootstrap.RegisterServices(builder, builder.Configuration);
+        DependencyInjectionBootstrap.RegisterServices(builder, builder.Configuration);
 
         builder.Services.AddControllers(options =>
         {

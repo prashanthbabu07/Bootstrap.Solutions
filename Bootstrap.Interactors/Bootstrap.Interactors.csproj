@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bootstrap.Data.Services\Bootstrap.Data.Services.csproj" />
+    <ProjectReference Include="..\Bootstrap.ThirdParty.Services\Bootstrap.ThirdParty.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="WeatherForecasts/" />
+    <Folder Include="WeatherForecasts/Commands/" />
+    <Folder Include="WeatherForecasts/Queries/" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

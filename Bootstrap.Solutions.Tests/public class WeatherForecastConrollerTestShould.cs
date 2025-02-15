@@ -7,12 +7,12 @@ using Microsoft.VisualStudio.TestPlatform.TestHost;
 namespace Bootstrap.Solutions.Tests;
 
 [Collection("API Test Collection")]
-public class WeatherForecastConrollerTests
+public class WeatherForecastConrollerTestShould
 {
 
 	private readonly HttpClient _client;
 
-	public WeatherForecastConrollerTests(TestHttpClientFixture fixture)
+	public WeatherForecastConrollerTestShould(TestHttpClientFixture fixture)
 	{
 		_client = fixture.Client;
 	}

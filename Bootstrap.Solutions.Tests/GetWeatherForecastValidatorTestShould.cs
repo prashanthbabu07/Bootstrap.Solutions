@@ -5,11 +5,11 @@ using Bootstrap.Interactors.WeatherForecasts.Queries;
 
 namespace Bootstrap.Solutions.Tests;
 
-public class GetWeatherForecastValidatorTests
+public class GetWeatherForecastValidatorTestShould
 {
     private readonly GetWeatherForecastValidator _validator;
 
-    public GetWeatherForecastValidatorTests()
+    public GetWeatherForecastValidatorTestShould()
     {
         _validator = new GetWeatherForecastValidator();
     }

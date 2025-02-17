@@ -2,8 +2,6 @@
 ```
 dotnet new sln -n Bootstrap.Solutions
 ```	
-
-
 # create new web api project using controllers
 ```
 dotnet new webapi --use-controllers --name Bootstrap.Web.Api

@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Bootstrap.Data.Services\Bootstrap.Data.Services.csproj" />
     <ProjectReference Include="..\Bootstrap.ThirdParty.Services\Bootstrap.ThirdParty.Services.csproj" />
+    <ProjectReference Include="..\Bootstrap.Services\Bootstrap.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>

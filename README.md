@@ -16,9 +16,10 @@ dotnet new webapi --use-controllers --name Bootstrap.Web.Api
 dotnet new classlib --name Bootstrap.Interactors
 ```
 
-# add class library for data services
+# add class library for data services & services
 ```
 dotnet new classlib --name Bootstrap.Data.Services
+dotnet new classlib --name Bootstrap.Services
 ```	
 
 # add class library for ef core data access
@@ -44,6 +45,7 @@ dotnet sln add Bootstrap.Data.Services
 dotnet sln add Bootstrap.Data.EntityFramework
 dotnet sln add Bootstrap.ThirdParty.Services
 dotnet sln add Bootstrap.Solutions.Tests
+dotnet sln add Bootstrap.Services
 ```
 
 # add project references
@@ -51,6 +53,7 @@ dotnet sln add Bootstrap.Solutions.Tests
 dotnet add Bootstrap.Web.Api reference Bootstrap.Interactors 
 dotnet add Bootstrap.Interactors reference Bootstrap.Data.Services 
 dotnet add Bootstrap.Interactors reference Bootstrap.ThirdParty.Services 
+dotnet add Bootstrap.Interactors reference Bootstrap.Services
 dotnet add Bootstrap.Data.Services reference Bootstrap.Data.EntityFramework 
 
 dotnet add Bootstrap.Solutions.Tests reference Bootstrap.Web.Api

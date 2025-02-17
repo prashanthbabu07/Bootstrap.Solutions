@@ -29,13 +29,13 @@ public class Program
             options.DefaultApiVersion = new ApiVersion(1, 0);
             options.AssumeDefaultVersionWhenUnspecified = true;
             options.ReportApiVersions = true;
-            options.ApiVersionReader = new UrlSegmentApiVersionReader();
-            // options.ApiVersionReader = ApiVersionReader.Combine(
-            //     new UrlSegmentApiVersionReader()
-            //     // new QueryStringApiVersionReader("api-version"),
-            //     // new HeaderApiVersionReader("X-Version"),
-            //     // new MediaTypeApiVersionReader("X-Version")
-            //     );
+            // options.ApiVersionReader = new UrlSegmentApiVersionReader();
+            options.ApiVersionReader = ApiVersionReader.Combine(
+                new UrlSegmentApiVersionReader()
+                // new QueryStringApiVersionReader("apiVersion"),
+                // new HeaderApiVersionReader("X-Version"),
+                // new MediaTypeApiVersionReader("X-Version")
+            );
         })
         .AddApiExplorer(options =>
         {
@@ -59,6 +59,7 @@ public class Program
             // Add other versions as needed.
 
             // options.OperationFilter<SwaggerVersioningParameter>();
+            // options.CustomSchemaIds(t => t.Name);
 
             // options.DocInclusionPredicate((version, desc) =>
             // {

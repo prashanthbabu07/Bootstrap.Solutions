@@ -1,4 +1,5 @@
 using System;
+using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
@@ -21,7 +22,12 @@ public class SwaggerVersioningParameter : IOperationFilter
 			Description = "API version",
 			Schema = new OpenApiSchema
 			{
-				Type = "string"
+				Type = "string",
+                Enum = new List<IOpenApiAny>
+                {
+                    new OpenApiString("1.0"),
+                    new OpenApiString("2.0")
+                }
 			}
 		});
 	}

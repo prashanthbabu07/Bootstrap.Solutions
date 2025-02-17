@@ -23,7 +23,7 @@ public class GlobalExceptionFilter : ExceptionFilterAttribute
 		{
 			var validationException = context.Exception as ValidationFailedException;
 			context.HttpContext.Response.ContentType = "application/json";
-			context.HttpContext.Response.StatusCode = validationException.ErrorInfo.StatusCode;
+			context.HttpContext.Response.StatusCode = validationException!.ErrorInfo.StatusCode;
 			context.Result = new JsonResult(validationException.ErrorInfo);
 			return Task.CompletedTask;
 		}
@@ -32,7 +32,7 @@ public class GlobalExceptionFilter : ExceptionFilterAttribute
 		{
 			var validationException = context.Exception as CustomErrorException;
 			context.HttpContext.Response.ContentType = "application/json";
-			context.HttpContext.Response.StatusCode = validationException.ErrorInfo.StatusCode;
+			context.HttpContext.Response.StatusCode = validationException!.ErrorInfo.StatusCode;
 			context.Result = new JsonResult(validationException.ErrorInfo);
 			return Task.CompletedTask;
 		}

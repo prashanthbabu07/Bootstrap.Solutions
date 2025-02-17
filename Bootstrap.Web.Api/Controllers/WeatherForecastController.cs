@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Bootstrap.Web.Api.Controllers;
 
 [ApiController]
-[Route("v{version:apiVersion}/[controller]")]
-[Route("v{version:apiVersion}/weather-forecast")]
+[Route("v{apiVersion}/[controller]")]
+[Route("v{apiVersion}/weather-forecast")]
 [ApiVersion("1.0")]
 [ApiVersion("2.0")]
 public class WeatherForecastController : ControllerBase

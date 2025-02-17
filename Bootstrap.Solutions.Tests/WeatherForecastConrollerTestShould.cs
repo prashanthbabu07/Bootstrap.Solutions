@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text.Json;
 using Bootstrap.Interactors.WeatherForecasts.Queries;
 using Bootstrap.Web.Api;
@@ -19,7 +20,7 @@ public class WeatherForecastConrollerTestShould
 
 
 	[Fact]
-	public async Task GetWeatherForecast_ReturnsSuccessAndCorrectContentType()
+	public async Task ReturnSuccessAndCorrectContentType_WithValidRequest()
 	{
 		var response = await _client.GetAsync("/v1/weather-forecast");
 		response.EnsureSuccessStatusCode();
@@ -35,5 +36,12 @@ public class WeatherForecastConrollerTestShould
 
 		Assert.NotNull(forecasts);
 		Assert.NotEmpty(forecasts);
+	}
+
+	[Fact]
+	public async Task ReturnNotFound_WhenUsingV2Api()
+	{
+		var response = await _client.GetAsync("/v2/weather-forecast/default");
+		Assert.True(response.StatusCode == HttpStatusCode.NotFound);
 	}
 }

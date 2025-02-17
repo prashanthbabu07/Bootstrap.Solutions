@@ -7,6 +7,8 @@ public class GetWeatherForecastValidator : AbstractValidator<GetWeatherForecast>
 {
 	public GetWeatherForecastValidator()
 	{
-		RuleFor(x => x).Must(x => 1 == 1).WithMessage("The value must be 1");
+		RuleFor(x => x.Number)
+			.Must(number => number == null || (number >= 0 && number <= 10))
+			.WithMessage("The number should be either null or between 0 and 10");
 	}
 }

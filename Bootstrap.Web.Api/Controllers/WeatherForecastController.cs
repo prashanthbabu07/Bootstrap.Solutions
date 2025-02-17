@@ -28,6 +28,7 @@ public class WeatherForecastController : ControllerBase
     /// <returns>
     // A list of weather forecasts.</returns> 
     [HttpGet("default")]
+    [MapToApiVersion("1.0")]
     public async Task<ActionResult> GetWeatherForecast()
     {
         return Ok(await _mediator.Send(new GetWeatherForecast()));   

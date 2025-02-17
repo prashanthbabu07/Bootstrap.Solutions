@@ -93,7 +93,6 @@ mv Bootstrap.Solutions.Tests tests
 
 # add mvc testing package
 ```
-dotnet add Bootstrap.Solutions.Tests package Microsoft.AspNetCore.Mvc.Testing --version 6.0.0
 dotnet add Bootstrap.Solutions.Tests package Microsoft.AspNetCore.Mvc.Testing --version 9.0.2
 ```
 

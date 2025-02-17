@@ -96,3 +96,9 @@ mv Bootstrap.Solutions.Tests tests
 dotnet add Bootstrap.Solutions.Tests package Microsoft.AspNetCore.Mvc.Testing --version 6.0.0
 dotnet add Bootstrap.Solutions.Tests package Microsoft.AspNetCore.Mvc.Testing --version 9.0.2
 ```
+
+# add api versioning and api explorer package
+```
+dotnet add Bootstrap.Web.Api package Asp.Versioning.Mvc --version 8.1.0
+dotnet add Bootstrap.Web.Api package Asp.Versioning.Mvc.ApiExplorer --version 8.1.0
+```

@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
 
     <!-- Enable XML documentation file generation -->
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- <GenerateDocumentationFile>true</GenerateDocumentationFile> -->
   </PropertyGroup>
 
   <ItemGroup>

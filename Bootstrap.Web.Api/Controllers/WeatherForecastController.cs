@@ -37,13 +37,13 @@ public class WeatherForecastController : ControllerBase
     [MapToApiVersion("1.0")]
     public async Task<ActionResult> GetWeatherForecastsV1()
     {
-        return Ok("hello from v1");   
+        return Ok(await Task.FromResult("hello from v1"));   
     }
 
     [HttpGet("")]
     [MapToApiVersion("2.0")]
     public async Task<ActionResult> GetWeatherForecastsV2()
     {
-        return Ok("hello from v2");   
+        return Ok(await Task.FromResult("hello from v2"));   
     }
 }

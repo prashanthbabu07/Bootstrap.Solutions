@@ -43,12 +43,6 @@ public class Program
             options.SubstituteApiVersionInUrl = true;
         });
 
-        // builder.Services.addpaie(options =>
-        // {
-        //     options.GroupNameFormat = "'v'VVV";
-        //     options.SubstituteApiVersionInUrl = true;
-        // });
-
         // swagger ui
         builder.Services.AddEndpointsApiExplorer();
         // builder.Services.AddSwaggerGen();
@@ -56,41 +50,7 @@ public class Program
         {
             options.SwaggerDoc("v1", new OpenApiInfo { Title = "Bootstrap API", Version = "v1" });
             options.SwaggerDoc("v2", new OpenApiInfo { Title = "Bootstrap API", Version = "v2" });
-            // Add other versions as needed.
 
-            // options.OperationFilter<SwaggerVersioningParameter>();
-            // options.CustomSchemaIds(t => t.Name);
-
-            // options.DocInclusionPredicate((version, desc) =>
-            // {
-            //     if (!desc.TryGetMethodInfo(out var methodInfo)) return false;
-
-            //     var versions = methodInfo.DeclaringType?
-            //         .GetCustomAttributes(true)
-            //         .OfType<ApiVersionAttribute>()
-            //         .SelectMany(attr => attr.Versions).ToList();
-
-            //     var mappedVersions = desc.ActionDescriptor.EndpointMetadata
-            //         .OfType<MapToApiVersionAttribute>()
-            //         .SelectMany(attr => attr.Versions)
-            //         .ToList();
-
-            //     return versions?.Any(v => $"v{v.ToString()}" == version) == true
-            //            || mappedVersions?.Any(v => $"v{v.ToString()}" == version) == true;
-            // });
-
-            // options.("api-version", new OpenApiParameter
-            // {
-            //     Name = "api-version",
-            //     In = ParameterLocation.Path, // or ParameterLocation.Query if you use query parameter versioning
-            //     Description = "API version to use",
-            //     Required = true,
-            //     Schema = new OpenApiSchema
-            //     {
-            //         Type = "string",
-            //         Enum = new List<IOpenApiAny> { new OpenApiString("1.0"), new OpenApiString("2.0") } // Add all your versions here.
-            //     }
-            // });
 
             options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {

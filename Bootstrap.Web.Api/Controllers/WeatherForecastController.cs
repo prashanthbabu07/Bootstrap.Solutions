@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Bootstrap.Web.Api.Controllers;
 
 [ApiController]
-[Route("v{apiVersion}/[controller]")]
-[Route("v{apiVersion}/weather-forecast")]
+// [Route("v{apiVersion}/[controller]")]
+[Route("v{version:apiVersion}/weather-forecast")]
 [ApiVersion("1.0")]
 [ApiVersion("2.0")]
 public class WeatherForecastController : ControllerBase
@@ -28,9 +28,16 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet("")]
+    [MapToApiVersion("1.0")]
+    public async Task<ActionResult> GetWeatherForecastsV1()
+    {
+        return Ok("hello from v1");   
+    }
+
+    [HttpGet("")]
     [MapToApiVersion("2.0")]
     public async Task<ActionResult> GetWeatherForecastsV2()
     {
-        return Ok(await _mediator.Send(new GetWeatherForecast()));   
+        return Ok("hello from v2");   
     }
 }

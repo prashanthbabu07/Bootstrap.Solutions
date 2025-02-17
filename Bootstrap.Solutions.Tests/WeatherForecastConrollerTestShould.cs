@@ -21,7 +21,7 @@ public class WeatherForecastConrollerTestShould
 	[Fact]
 	public async Task GetWeatherForecast_ReturnsSuccessAndCorrectContentType()
 	{
-		var response = await _client.GetAsync("/WeatherForecast");
+		var response = await _client.GetAsync("/v1/weather-forecast");
 		response.EnsureSuccessStatusCode();
 
 		Assert.Equal("application/json; charset=utf-8",

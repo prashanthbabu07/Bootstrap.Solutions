@@ -37,7 +37,7 @@ public class WeatherForecastController : ControllerBase
     [MapToApiVersion("1.0")]
     public async Task<ActionResult> GetWeatherForecastsV1()
     {
-        return Ok(await Task.FromResult("hello from v1"));   
+        return Ok(await _mediator.Send(new GetWeatherForecast())); 
     }
 
     [HttpGet("")]

@@ -21,6 +21,12 @@ public class WeatherForecastController : ControllerBase
         _mediator = mediator;
     }
 
+
+    /// <summary>
+    /// Retrieves all weather forecasts.
+    /// </summary>
+    /// <returns>
+    // A list of weather forecasts.</returns> 
     [HttpGet("default")]
     public async Task<ActionResult> GetWeatherForecast()
     {

@@ -1,6 +1,7 @@
 using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Bootstrap.Data.Services;
 using Bootstrap.Interactors.WeatherForecasts.Queries;
 using Bootstrap.Web.Api.Filters;
 using FluentValidation;
@@ -28,6 +29,11 @@ public class DependencyInjectionBootstrap
 				.AsClosedTypesOf(typeof(AbstractValidator<>))
 				.AsImplementedInterfaces()
 				.InstancePerDependency();
+
+			cb.RegisterAssemblyTypes(typeof(IWeatherDataService).GetTypeInfo().Assembly)
+			.Where(t => t.Name.EndsWith("Service"))
+			.AsImplementedInterfaces()
+			.InstancePerDependency();
 		}));
 	}
 }

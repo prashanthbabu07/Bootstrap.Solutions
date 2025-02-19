@@ -6,7 +6,7 @@ namespace Bootstrap.Interactors.WeatherForecasts.Queries;
 public class GetWeatherForecastHandler : IRequestHandler<GetWeatherForecast, IEnumerable<WeatherForecast>>
 {
 	private static readonly string[] Summaries = new[]
-   {
+	{
 		"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 	};
 

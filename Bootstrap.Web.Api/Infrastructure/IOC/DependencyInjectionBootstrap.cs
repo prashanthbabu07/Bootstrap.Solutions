@@ -11,6 +11,8 @@ namespace Bootstrap.Web.Api.Infrastructure.IOC;
 
 public class DependencyInjectionBootstrap
 {
+	private const string _service = "Service";
+
 	public static void RegisterServices(WebApplicationBuilder builder, IConfiguration configuration)
 	{
 		builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetWeatherForecast).Assembly));
@@ -31,7 +33,7 @@ public class DependencyInjectionBootstrap
 				.InstancePerDependency();
 
 			cb.RegisterAssemblyTypes(typeof(IWeatherDataService).GetTypeInfo().Assembly)
-			.Where(t => t.Name.EndsWith("Service"))
+			.Where(t => t.Name.EndsWith(_service))
 			.AsImplementedInterfaces()
 			.InstancePerDependency();
 		}));

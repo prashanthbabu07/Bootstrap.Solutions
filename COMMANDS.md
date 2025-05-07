@@ -85,6 +85,12 @@ dotnet new xunit --name Bootstrap.Solutions.Tests
 ```
 dotnet test
 ```
+test specific class command
+```
+dotnet test --filter "FullyQualifiedName~Bootstrap.Solutions.Tests.WeatherForecastConrollerTestShould
+```
+
+
 
 # move test project to Tests solution folder
 ```

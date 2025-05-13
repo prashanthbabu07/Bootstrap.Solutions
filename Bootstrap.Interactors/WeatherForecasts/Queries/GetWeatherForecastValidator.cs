@@ -1,7 +1,7 @@
 using System;
 using FluentValidation;
 
-namespace Bootstrap.Interactors.WeatherForecasts.Queries;
+namespace Bootstrap.Interactors.WeatherForecasts;
 
 public class GetWeatherForecastValidator : AbstractValidator<GetWeatherForecast>
 {

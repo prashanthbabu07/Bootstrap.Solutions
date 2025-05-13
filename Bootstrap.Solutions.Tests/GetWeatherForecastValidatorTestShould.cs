@@ -1,7 +1,7 @@
 using Xunit;
 using FluentValidation;
 using FluentValidation.TestHelper;
-using Bootstrap.Interactors.WeatherForecasts.Queries;
+using Bootstrap.Interactors.WeatherForecasts;
 
 namespace Bootstrap.Solutions.Tests;
 

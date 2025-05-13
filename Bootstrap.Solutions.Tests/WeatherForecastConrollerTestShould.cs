@@ -1,6 +1,6 @@
 using System.Net;
 using System.Text.Json;
-using Bootstrap.Interactors.WeatherForecasts.Queries;
+using Bootstrap.Interactors.WeatherForecasts;
 using Bootstrap.Web.Api;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.VisualStudio.TestPlatform.TestHost;

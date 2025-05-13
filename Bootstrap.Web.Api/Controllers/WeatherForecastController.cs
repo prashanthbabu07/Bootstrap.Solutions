@@ -1,5 +1,5 @@
 using Asp.Versioning;
-using Bootstrap.Interactors.WeatherForecasts.Queries;
+using Bootstrap.Interactors.WeatherForecasts;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

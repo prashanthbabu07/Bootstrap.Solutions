@@ -1,7 +1,7 @@
 using System;
 using MediatR;
 
-namespace Bootstrap.Interactors.WeatherForecasts.Queries;
+namespace Bootstrap.Interactors.WeatherForecasts;
 
 public class GetWeatherForecastHandler : IRequestHandler<GetWeatherForecast, IEnumerable<WeatherForecast>>
 {

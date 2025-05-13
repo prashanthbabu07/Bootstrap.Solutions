@@ -2,7 +2,7 @@ using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Bootstrap.Data.Services;
-using Bootstrap.Interactors.WeatherForecasts.Queries;
+using Bootstrap.Interactors.WeatherForecasts;
 using Bootstrap.Web.Api.Filters;
 using FluentValidation;
 using MediatR;

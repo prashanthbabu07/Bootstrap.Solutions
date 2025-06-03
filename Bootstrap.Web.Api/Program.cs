@@ -17,6 +17,10 @@ public class Program
         builder.Services.AddControllers(options =>
         {
             options.Filters.Add(typeof(GlobalExceptionFilter));
+        }).ConfigureApiBehaviorOptions(options =>
+        {
+            // Prevent ASP.NET Core from automatically returning ValidationProblemDetails
+            options.SuppressModelStateInvalidFilter = true;
         });
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddOpenApi();

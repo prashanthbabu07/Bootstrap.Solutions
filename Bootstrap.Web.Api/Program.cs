@@ -1,10 +1,8 @@
-using System.Reflection;
 using Asp.Versioning;
-using Autofac.Extensions.DependencyInjection;
 using Bootstrap.Web.Api.Filters;
 using Bootstrap.Web.Api.Infrastructure.IOC;
 using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Reflection;
 
 namespace Bootstrap.Web.Api;
 
@@ -19,6 +17,10 @@ public class Program
         builder.Services.AddControllers(options =>
         {
             options.Filters.Add(typeof(GlobalExceptionFilter));
+        }).ConfigureApiBehaviorOptions(options =>
+        {
+            // Prevent ASP.NET Core from automatically returning ValidationProblemDetails
+            options.SuppressModelStateInvalidFilter = true;
         });
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddOpenApi();
@@ -33,9 +35,7 @@ public class Program
             // options.ApiVersionReader = new UrlSegmentApiVersionReader();
             options.ApiVersionReader = ApiVersionReader.Combine(
                 new UrlSegmentApiVersionReader()
-            // new QueryStringApiVersionReader("apiVersion"),
-            // new HeaderApiVersionReader("X-Version"),
-            // new MediaTypeApiVersionReader("X-Version")
+            
             );
         })
         .AddApiExplorer(options =>
@@ -113,8 +113,10 @@ public class Program
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Theorem Rhythm Web API v1");
-                options.SwaggerEndpoint("/swagger/v2/swagger.json", "Theorem Rhythm Web API v2");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Bootstrap Web API v1");
+                options.SwaggerEndpoint("/swagger/v2/swagger.json", "Bootstrap Web API v2");
+                //c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                //options.RoutePrefix = string.Empty; // Makes Swagger the homepage
             });
         }
 
